@@ -1,0 +1,18 @@
+.lembrarMinhaSenha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+
+.lembrarMinhaSenha label {
+    flex: 1;
+    color: white;
+    text-align: left;
+}
+
+.lembrarMinhaSenha input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
