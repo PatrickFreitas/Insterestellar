@@ -16,6 +16,8 @@
 	</style>
 </head>
 <body>
+	<audio id="audio"><source src="./sound/laser.wav" type="audio/mpeg"></audio>
+	
 	<header class="v-header container">
 			<div class="fullscreen">
 				<video src="backgrounds/bg2Video.mp4" autoplay="true" muted="true" loop="true"></video>
@@ -25,8 +27,22 @@
 				<div class="col-dg-6 col-dm-12 col-12 centralDiv">
 						<img src="logo/INTERESTELLARLOGO-01.png" class="logo">
 						<h3 class="titulo">Login</h3>
-						<input id="fldUsuario" type="text" name="" placeholder="Informe seu usuário.">
-						<input id="fldSenha" type="password" name="" placeholder="Informe sua senha.">
+
+						<input 	id="fldUsuario" 
+								class="inputText"
+								onfocus="playAudio()" 
+								onblur="pauseAudio()" 
+								type="text" 
+								name="" 
+								placeholder="Informe seu usuário.">
+
+						<input 	id="fldSenha"
+								class="inputText"
+								onfocus="playAudio()" 
+								onblur="pauseAudio()" 
+								type="password" 
+								name="" 
+								placeholder="Informe sua senha.">
 						
 						<div class="lembrarMinhaSenha">
 							<input type="checkbox" name="lembrarSenha">

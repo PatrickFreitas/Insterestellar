@@ -11,6 +11,15 @@ html, body{
     font-size: 30px;
     margin-bottom: 40px;
 }
+
+.inputText {
+    background-image: url('../img/ship.png');
+    background-position: right -1920px;
+    background-repeat: no-repeat;
+    background-color: rgb(255,255,255, 1);
+    background-size: 30px 30px;
+}
+
 .centralDiv{
     height: 100vh;
     margin: auto;
