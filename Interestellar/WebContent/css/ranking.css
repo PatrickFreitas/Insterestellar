@@ -1,0 +1,75 @@
+@font-face{
+    src: url(../fonts/commando.ttf);
+    font-family: commando;
+}
+*{
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: commando;
+}
+.align-center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+	width: 800px;
+	height: 100vh;
+}
+.logo{
+	width: 380px;
+}
+ul{
+	list-style: none;	
+	width: 400px;
+	margin: auto;
+	padding: 10px;
+	font-size: 20px;
+}
+.ranking-list-item{	
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border-radius: 5px;
+    box-shadow: inset 0 0 20px rgba(193, 94, 255, .9), 0 0 20px rgba(193, 94, 255, .4);
+	margin: 8px;
+	color: white;
+}
+.ranking-list-item:hover{
+    background: rgba(193, 94, 255, .2);
+}
+.titulo{
+	color: #F3CF42;
+	text-shadow: 5px 5px 5px black;
+	padding: 5px;
+	font-size: 35px;
+}
+.spanPts{
+	text-align: right;
+	color:  #F3CF42;
+	padding: 0 5px;
+}
+.fullscreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+.fullscreen video{
+    min-width: 100%;
+    min-height: 100%;
+}
+.header-overlay{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: -1;
+    opacity: 0.7;
+}
