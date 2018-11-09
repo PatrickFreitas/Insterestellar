@@ -11,15 +11,40 @@ function normalizeBorder(field){
     field.style.borderColor = '#ffffffff'
 }
 
-function playAudio(){
-    let audio = $('audio')
-    audio.play()
+function playAudio(nomeAudio, volum){
+	urlAudio = './sound/' + nomeAudio + '.wav';
+	var audio = new Audio(urlAudio);
+	audio.volume = volum;
+    audio.play();
 }
 
-function pauseAudio(){
-    let audio = $('audio')
-    audio.pause()
-    audio.currentTime = 0
+function pauseAudio(audio){
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+function playKeySound(){
+	var ad = new Audio('./sound/key-sound.wav');
+	ad.play();
+    return false;
+}
+
+window.onload = function(){
+	document.getElementsByClassName("header-overlay")[0].addEventListener("mousemove", ativarBackgroundSound);
+}
+
+function ativarBackgroundSound() {
+	backgroundSound = new Audio('./sound/interstellar-main-theme.mp3'); 
+	backgroundSound.addEventListener('ended', function() {
+	    this.currentTime = 0;
+	    this.play();
+	}, false);
+	backgroundSound.play();
+	removeBackgroundSoundHandler()
+}
+
+function removeBackgroundSoundHandler() {
+    document.getElementsByClassName("header-overlay")[0].removeEventListener("mousemove", ativarBackgroundSound);
 }
 
 let inputs = document.getElementsByClassName('inputText');

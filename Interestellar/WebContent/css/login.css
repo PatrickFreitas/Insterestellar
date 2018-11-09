@@ -1,0 +1,52 @@
+.lembrarMinhaSenha{
+    width: 100%;
+    font-size: 30px;
+    margin: 40px;
+}
+.lembrarMinhaSenha label{
+    font-size: 40px;
+}
+.lembrarMinhaSenha input {
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+}
+
+.esqueciSenha a  {
+	text-decoration: none;
+	color: #adadad;
+	text-align: right;
+	display: inline-block;	
+	font-weight:500;
+}
+
+.esqueciSenha a:hover {
+	text-decoration: underline;	
+	color: #e8e8e8;
+}
+
+
+
+@media screen and (min-width: 0px){
+	.esqueciSenha a  {
+		font-size: 42px;
+		margin: 20px 0px 40px;
+		width: 300px;
+	}	
+}
+
+@media screen and (min-width:730px){
+	.esqueciSenha a  {
+		font-size: 32px;
+		margin: 20px 0px 40px;
+		width: 700px;
+	}	
+}
+
+@media screen and (min-width: 1001px) {	
+	.esqueciSenha a  {
+		font-size: 13px;
+		margin: 10px 0px 20px;
+		width: 300px;
+	}	
+}

@@ -1,0 +1,131 @@
+.input-login::placeholder {
+  color: #cecece;
+}
+
+.input-cadastro::placeholder {
+  color: #cecece;
+}
+
+.fullscreen img {
+	width: 100%;
+	object-fit: cover;
+}
+
+a {
+	text-decoration: none;	
+}
+
+.btn{
+    border: none;
+    border-radius: 3px;
+    color: white;
+    transition: all 0.3s;
+    padding-top: 5px;
+    font-family: commando;
+    -webkit-text-stroke-color: #000000;
+}
+
+.background-music {
+    position:absolute;
+    width:300px;
+    height:50px;
+    bottom:0px;
+    right:25%;
+    left:50%;
+    margin-left:-150px;
+}
+
+.btn-background-music {
+	width: 50px;
+	margin: auto;
+	display: block;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.titulo{
+    letter-spacing: 1px;
+    font-family: commando;
+    color: #F3CF42;
+    text-shadow: 3px 3px 7px #081F2E;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000000;
+}
+
+.input-login {
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid #F3CF42;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #FFF;
+    display: block;
+}
+
+
+@media screen and (min-width: 0px){
+	.titulo{
+	    font-size: 85px;
+	    margin-bottom: 40px;
+	}
+	
+	.input-login {
+	    margin-top: 25px;
+	    width: 550px;
+	    height: 78px;
+	    padding: 28px 25px;
+    	font-size: 47px;
+	}
+	
+	.btn {
+	}
+}
+
+@media screen and (min-width:730px){
+	.titulo{
+	    font-size: 105px;
+	    margin-bottom: 30px;
+	}	
+	
+	.input-login {
+	    margin-top: 25px;
+	    width: 700px;
+	    height: 85px;
+	    padding: 30px 25px;
+    	font-size: 42px;
+	}
+	
+	.btn {
+    	font-size: 45px;
+    	-webkit-text-stroke-width: 2.5px;
+    	display: block;
+    	height: 80px;
+	    width: 100%;
+	    margin-top: 5px;
+	}
+}
+
+@media screen and (min-width: 1001px) {	
+	.titulo{
+	    font-size: 45px;
+	    margin-bottom: 25px;
+	}
+	
+	.input-login {
+	    margin-top: 15px;
+	    width: 300px;
+	    height: 28px;
+	    padding: 18px 15px;
+	    font-size: 17px;
+	}
+	
+	.btn {
+    	font-size: 18px;
+    	-webkit-text-stroke-width: 0.5px;
+    	display: inline-block;
+	    margin-top: 10px;
+	    height: 30px;
+	}
+}
