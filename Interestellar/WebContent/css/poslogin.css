@@ -1,0 +1,14 @@
+.select-group {
+  padding: 10px;
+  border: 0px;
+  border-bottom: 2px solid #F3CF42;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin: 10px 0;
+}
+
+.select-option {
+  color: black;
+  background: rgba(255, 255, 255, 0.1);  
+}
