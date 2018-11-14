@@ -68,7 +68,7 @@
 					placeholder="Informe seu email">
 				<div class="section-buttons">
 					<a href="login.jsp"><button class="btn colorBtn1">Cancelar</button></a>
-					<button id="btnConfirma" class="btn colorBtn3">Confirmar</button>
+					<button type="button" id="btnConfirma" class="btn colorBtn3">Confirmar</button>
 				</div>				
 			</form>			
 		</div>

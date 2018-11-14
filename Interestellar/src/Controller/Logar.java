@@ -73,6 +73,7 @@ public class Logar extends HttpServlet {
 		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		String mensagem = "Não foi possível localizar a mensagem para esse cenário.";
+		String destino = "";
 		
         List<Jogador> jogadores = capturaJogadores();
         request.setAttribute("jogadores", jogadores);
@@ -87,15 +88,17 @@ public class Logar extends HttpServlet {
     			Jogador j = jogadores.get(i);
     			if(j.getUsuario().equals(usuario) && j.getSenha().equals(senha)) { 
     				mensagem = "Usuário localizado, parabéns pelo Login!"; 
+    				destino = "pos-login.jsp";
     				break;
     			}
     			if(i == jogadores.size() - 1) {
     	        	mensagem = "Não há nenhum registro com essas informações.";
+    				destino = "login.jsp";
     			}
     		}
 
             request.setAttribute("mensagem", mensagem);
-        	request.getRequestDispatcher("login.jsp").forward(request, response);
+        	request.getRequestDispatcher(destino).forward(request, response);
         }
             
     }

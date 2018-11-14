@@ -26,6 +26,12 @@ function registrar(){
         addRedBorder(fldConfirmaSenha)
         return; //alert('A confirmação da senha está diferente da senha, por favor corrija os campos!')
     }
+
+    if(!fldEmail.value.trim()){
+        addRedBorder(fldEmail)
+        addRedBorder(fldEmail)
+        return; //alert('A confirmação da senha está diferente da senha, por favor corrija os campos!')
+    }
     
     $('formCadastro').submit()
 }
