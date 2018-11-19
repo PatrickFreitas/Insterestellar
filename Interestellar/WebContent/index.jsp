@@ -11,6 +11,6 @@
     <a href="login.jsp">Login</a>
     <a href="register.jsp">Cadastrar</a>
     <a href="raking.jsp">Rank</a>
-    <a href="sobreJogo.html">Sobre</a>
+    <a href="sobreJogo.jsp">Sobre</a>
 </body>
 </html>

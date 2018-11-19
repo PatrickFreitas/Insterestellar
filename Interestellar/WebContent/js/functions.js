@@ -8,7 +8,7 @@ function addRedBorder(field){
 }
 
 function normalizeBorder(field){
-    field.style.borderColor = '#ffffffff'
+    field.style.borderColor = '#F3CF42'
 }
 
 function playAudio(nomeAudio, volum){

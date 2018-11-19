@@ -71,6 +71,6 @@ public class Cadastrar extends HttpServlet {
             jogador.setSenha(request.getParameter("senha"));
             jogador.setEmail(request.getParameter("email"));
             registrarJogador(jogador);
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login.jsp");
     }
 }
