@@ -6,6 +6,7 @@
     <title>Sobre o jogo</title>
     <link rel="shortcut icon" href="logo/INTERESTELLARLOGO-01.png"/>
     <link rel="stylesheet" href="./css/sobreJogo.css">
+    <link rel="stylesheet" href="./css/interestellar.css">
     <style type="text/css">
         .container{
             max-width: 960px;
@@ -34,7 +35,8 @@
             <p class="paragrafo">Interestellar foi criado e desenvolvido por Patrick Freitas, Luiz Fernando e Lukas Rodrigo. O jogo foi criado na disciplina de Projeto Integrador II</p>
         </div>
         <div style="width: 100%">
-            <a href="register.jsp"><button type="button" class="btn colorBtn2">Cadastrar</button></a>
+            <a href="register.jsp"><button type="button" class="btn-menu colorBtn2">Cadastrar</button></a>
+            <a href="login.jsp"><button type="button" class="btn-menu colorBtn2">Entrar</button></a>
         </div>
     </div>
 </header>

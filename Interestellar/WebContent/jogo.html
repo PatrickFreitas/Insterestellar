@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./css/jogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+
+<main id="jogo"> <!-- config do jogo -->
+    <section id="tela-jogo"> <!-- config area do jogo -->
+        <section id="background-jogo" class="movimento">
+            <section id="area-voo"> <!-- limite da area de voo -->
+                <div id="obstaculos" class="movimento"></div>
+                <div id="jogador" class="movimento">
+                    <img id="nave" src="./img/ship.png" class="nave">
+                </div>
+                <div id="placar">1</div>
+                <div id="antes-jogo"></div>
+                <div id="placar-final">
+                    <div id="medalha"></div>
+                    <div id="pontuacao"></div>
+                    <div id="maior-pontuacao"></div>
+                    <div id="jogar-novamente">
+                        <button> Replay </button>
+                    </div>
+                </div>
+
+
+            </section>
+        </section>
+        <section id="footer-jogo" class="movimento"></section>
+    </section>
+</main>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/jogo.js"></script>
+
+</body>
+</html>

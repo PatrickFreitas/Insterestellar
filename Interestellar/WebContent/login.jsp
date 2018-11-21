@@ -32,20 +32,27 @@
 		<div class="col-dg-6 col-dm-12 col-12 centralDiv">
 				<img src="logo/INTERESTELLARLOGO-01.png" class="col-dg-10 col-dm-10 col-10 logo">
 				<h3 class="titulo">ENTRAR</h3>
-      				<form id="formLogin" action="Logar" method="POST">
+      				<form id="formLogin" action="Logar" method="POST">      				
+						<div class="ativarSons">
+							<a href="#"> Ativar efeitos sonoros </a>
+						</div>
+      				
 					<input 	id="fldUsuario" 
 							class="input-ship-icon input-login"
 							onfocus="playAudio('laser', 0.3)" 
 							onblur="pauseAudio(audioLaser)" 
+							onmouseover="playAudio('hover-sound', 0.3)"
 							onkeydown="playKeySound()"
 							type="text" 
 							name="usuario" 
-							placeholder="Informe seu usuário.">
+							placeholder="Informe seu usuário."
+							style="margin-top: -1px;">
 
 					<input 	id="fldSenha"
 							class="input-ship-icon input-login"
 							onfocus="playAudio('laser', 0.3)" 
 							onblur="pauseAudio(audioLaser)"
+							onmouseover="playAudio('hover-sound', 0.3)"
 							onkeydown="playKeySound()"
 							type="password" 
 							name="senha" 
@@ -61,9 +68,9 @@
 				</div>
 
 				<div style="width: 100%">
-                   	<a href="index.jsp"><button type="button" class="btn col-dg-4 col-dm-12 col-12 colorBtn1">Cancelar</button></a>
-                    <a href="register.jsp"><button type="button" class="btn col-dg-4 col-dm-12 col-12 colorBtn2">Cadastrar</button></a>
-                   	<button id="btnLogin" type="submit" class="btn col-dg-4 col-dm-12 col-12 colorBtn3">Entrar</button>
+                   	<a href="sobreJogo.jsp"><button type="button" onmouseover="playAudio('hover-sound', 0.3)" class="btn col-dg-4 col-dm-12 col-12 colorBtn1">Cancelar</button></a>
+                    <a href="register.jsp"><button type="button" onmouseover="playAudio('hover-sound', 0.3)" class="btn col-dg-4 col-dm-12 col-12 colorBtn2">Cadastrar</button></a>
+                   	<button id="btnLogin" type="button" onmouseover="playAudio('hover-sound', 0.3)" class="btn col-dg-4 col-dm-12 col-12 colorBtn3">Entrar</button>
 				</div>						
                    </form>
       				<%
