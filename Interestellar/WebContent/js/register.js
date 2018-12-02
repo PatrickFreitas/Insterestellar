@@ -1,6 +1,12 @@
 let btnConfirma = $('btnConfirma')
 btnConfirma.addEventListener('click', registrar)
 
+function validaExibicaoModal() {
+	mensagem = document.getElementById("mensagemCadastro").value;
+	if(mensagem != "" && mensagem != null && mensagem != "null")
+		alert('Modal:' + mensagem);
+}
+
 function registrar(){
     let fldUsuario = $('fldUsuario');
     let fldSenha = $('fldSenha');
@@ -35,3 +41,5 @@ function registrar(){
     
     $('formCadastro').submit()
 }
+
+window.onload = validaExibicaoModal;

@@ -23,8 +23,12 @@
 	</style>
 </head>
 <body>
+<%
+	String mensagem = (String)request.getAttribute("mensagemCadastro");
+%>
 	<audio id="audio"><source src="./sound/laser.wav" type="audio/mpeg"></audio>
 	<header class="v-header container">
+		<input type="text" id="mensagemCadastro" value="<%= mensagem %>" style="display:none">
 		<div class="fullscreen">
 			<video src="backgrounds/bg2Video.mp4" autoplay="true" muted="true" loop="true"></video>
 			<img src="backgrounds/bg.jpg">
@@ -34,7 +38,7 @@
 			<img src="logo/INTERESTELLARLOGO-01.png" class="col-dg-10 col-dm-10 col-10 logo">
 			<h3 class="titulo">CADASTRAR</h3>
 			<form id="formCadastro" action="Cadastrar" method="POST">
-				<input id="fldUsuario" 
+				<input id="fldUsuario"
 					class="input-ship-icon input-cadastro"
 					onfocus="playAudio('laser', 0.3)" 
 					onblur="pauseAudio(audioLaser)" 
@@ -67,7 +71,7 @@
 					name="email" 
 					placeholder="Informe seu email">
 				<div class="section-buttons">
-					<a href="login.jsp"><button class="btn colorBtn1">Cancelar</button></a>
+					<a href="login.jsp"><button type="button" class="btn colorBtn1">Cancelar</button></a>
 					<button type="button" id="btnConfirma" class="btn colorBtn3">Confirmar</button>
 				</div>				
 			</form>			
