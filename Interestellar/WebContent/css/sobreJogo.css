@@ -21,7 +21,7 @@
     width: 800px;
     height: 100vh;
 }
-.btn{
+.btn-menu {
     border: none;
     border-radius: 3px;
     color: white;
@@ -32,6 +32,7 @@
     padding-top: 5px;
     font-family: commando;
     -webkit-text-stroke-color: #000000;
+    margin: 3px 0px;
 }
 .colorBtn2{
     background-color: #F3CF42;
@@ -54,12 +55,7 @@
     margin: 8px;
     color: white;
 }
-.titulo{
-    color: #F3CF42;
-    text-shadow: 5px 5px 5px black;
-    padding: 5px;
-    font-size: 35px;
-}
+
 .spanPts{
     text-align: right;
     color:  #F3CF42;

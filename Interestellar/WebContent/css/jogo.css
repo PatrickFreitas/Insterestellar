@@ -1,0 +1,324 @@
+@-webkit-keyframes animaFooter {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -848px 0}
+}
+@-moz-keyframes animaFooter {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -848px 0}
+}
+@-o-keyframes animaFooter {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -848px 0}
+}
+@-keyframes animaFooter {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -848px 0}
+}
+
+@-webkit-keyframes animaBg {
+    0% {background-position: 0px 100%;}
+    100% {background-position: -2000px 100%}
+}
+@-moz-keyframes animaBg {
+    0% {background-position: 0px 100%;}
+    100% {background-position: -2000px 100%}
+}
+@-o-keyframes animaBg {
+    0% {background-position: 0px 100%;}
+    100% {background-position: -2000px 100%}
+}
+@-keyframes animaBg {
+    0% {background-position: 0px 100%;}
+    100% {background-position: -275px 100%}
+}
+
+@-webkit-keyframes animaPipe {
+    0% {left: 900px;}
+    100% {left: -100px}
+}
+@-moz-keyframes animaPipe {
+    0% {left: 900px;}
+    100% {left: -100px}
+}
+@-o-keyframes animaPipe {
+    0% {left: 900px;}
+    100% {left: -100px}
+}
+@-keyframes animaPipe {
+    0% {left: 900px;}
+    100% {left: -100px}
+}
+@-webkit-keyframes animaObt {
+    0% {background-position: 0px 0px}
+    100% {background-position: -180px 0px}
+}
+@-moz-keyframes animaObt {
+    0% {background-position: 0px 0px}
+    100% {background-position: -180px 0px}
+}
+@-o-keyframes animaObt {
+    0% {background-position: 0px 0px}
+    100% {background-position: -180px 0px}
+}
+@-keyframes animaObt {
+    0% {background-position: 0px 0px}
+    100% {background-position: -180px 0px}
+}
+
+@font-face{
+    src: url(../fonts/commando.ttf);
+    font-family: commando;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    overflow: hidden;
+    font-family: commando;
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+#jogo{
+    margin: auto;
+    position: relative;
+    max-width: 767px;
+    height: 100%;
+    min-height: 525px;
+}
+
+#tela-jogo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#background-jogo{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url("../img/bg.jpg");
+    background-position: 0px 100%;
+    background-repeat: repeat; /* talvez de erro */
+    background-color: black;
+
+
+
+    -webkit-animation: animaBg 13s linear infinite;
+    animation: animaBg 13s linear infinite;
+}
+
+#area-voo{
+    position: absolute;
+    bottom: 0;
+    height: 420px;
+    width: 100%;
+
+}
+
+#obstaculos{
+    position: absolute;
+    top: -50px;
+    height: 50px;
+    width: 100%;
+    box-shadow: inset 0 0 20px rgba(193, 94, 255, 1), 0 0 20px rgba(193, 94, 255, .4);
+
+    background-image: url("../img/topo.png");
+    background-position: center center;
+    background-repeat: repeat;
+
+    -webkit-animation: animaObt 2s linear infinite;
+    animation: animaObt 2s linear infinite;
+}
+
+#footer-jogo{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-image: url("../img/footer.jpg");
+    -webkit-box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
+    -moz-box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
+    box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
+
+
+    background-position: 0px 100%;
+    background-repeat: repeat;
+
+
+    -webkit-animation: animaFooter 4s linear infinite;
+    animation: animaFooter 4s linear infinite;
+
+}
+
+#placar{
+    padding-top: 30px;
+    position: absolute;
+    color: #F3CF42;
+    text-shadow: 5px 5px 5px black;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    z-index: 100;
+    font-size: 50px;
+}
+
+#antes-jogo{
+    position: absolute;
+    opacity: 0;
+    top: 75px;
+    left: 65px;
+    width: 188px;
+    height: 170px;
+    background-color: #4ec0ca;
+
+}
+
+
+#placar-final{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 64px;
+    left: 43px;
+    width: 236px;
+    height: 280px;
+    background-color: black;
+    z-index: 1000;
+}
+
+#medalha{
+    position: absolute;
+    opacity: 0;
+    top: 114px;
+    width: 44px;
+    height: 44px;
+}
+
+#pontuacao{
+    position: absolute;
+    top: 105px;
+    left: 107px;
+    width: 184px;
+    height: 14px;
+    text-align: right;
+}
+
+#maior-pontuacao{
+    position: absolute;
+    top: 147px;
+    left: 107px;
+    width: 104px;
+    height: 14px;
+    text-align: right;
+}
+/*
+#jogar-novamente{
+    position: absolute;
+    top: 205px;
+    left: 65px;
+    width: 70px;
+    height: 115px;
+    text-align: right;
+    cursor: pointer;
+}
+#jogar-novamente button{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+}
+*/
+
+.boundingbox{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+
+#jogador{
+    left: 60px;
+    top: 200px;
+}
+
+.nave{
+    left: 60px;
+    top: 200px;
+    position: absolute;
+    width: 50px;
+    z-index: 100;
+    background-image: url("../img/ship.png");
+
+    transition: 0.25s;
+}
+
+.pipe{
+    position: absolute;
+    left: -100px;
+    width: 52px;
+
+    z-index: 10;
+
+
+    -webkit-animation: animaPipe 754ms infinite;
+    animation: animaPipe 754ms infinite;
+}
+
+.pipe-topo{
+    position: absolute;
+    top: 0;
+    width: 52px;
+    background-color: tomato;
+    background-repeat: repeat-y;
+    background-position: center;
+
+}
+
+.pipe-topo:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    height: 26px;
+    background-color: #cccccc;
+}
+
+
+.pipe-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    background-color: tomato;
+    background-repeat: repeat-y;
+    background-position: center;
+}
+.pipe-bottom:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 26px;
+    background-color: #cccccc;
+
+}
+
+.box {
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    left: 100%;
+    background-color: red;
+}
+
+body {
+	background: gray;
+	background-repeat: no-repeat;
+}

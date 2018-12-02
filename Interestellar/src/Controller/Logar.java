@@ -22,10 +22,10 @@ public class Logar extends HttpServlet {
     public List<Jogador> capturaJogadores() throws FileNotFoundException, IOException {
 	    List<Jogador> result = new ArrayList<>();
 	    String caminhoDir = getServletContext().getRealPath("/WEB-INF");    
-	    File arquivo = new File(caminhoDir,"jogadores.txt");
+	    File arquivo = new File(caminhoDir,"repositorio.txt");
 	    if(arquivo.exists()) {
            String linha;
-           String cli = getServletContext().getRealPath("/WEB-INF/jogadores.txt");    
+           String cli = getServletContext().getRealPath("/WEB-INF/repositorio.txt");    
            BufferedReader reader = new BufferedReader(
                                   new InputStreamReader(
                                       new FileInputStream(cli), Charset.forName("UTF-8").newDecoder()));
@@ -89,6 +89,7 @@ public class Logar extends HttpServlet {
     			if(j.getUsuario().equals(usuario) && j.getSenha().equals(senha)) { 
     				mensagem = "Usuário localizado, parabéns pelo Login!"; 
     				destino = "pos-login.jsp";
+    	            request.setAttribute("usuario", usuario);
     				break;
     			}
     			if(i == jogadores.size() - 1) {

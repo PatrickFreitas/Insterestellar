@@ -23,12 +23,12 @@ public class Cadastrar extends HttpServlet {
     public int getQtdJogadores() throws FileNotFoundException, IOException {
         int quantidadeJogadores = 0;
         String path = getServletContext().getRealPath("/WEB-INF");    
-        File file = new File(path, "jogadores.txt");
+        File file = new File(path, "repositorio.txt");
         if(!file.exists()) {
             file.createNewFile();
             return quantidadeJogadores;
         } else {
-            String fileJogadores = getServletContext().getRealPath("/WEB-INF/jogadores.txt");    
+            String fileJogadores = getServletContext().getRealPath("/WEB-INF/repositorio.txt");    
             BufferedReader reader = new BufferedReader(
                                    new InputStreamReader(
                                        new FileInputStream(fileJogadores), Charset.forName("UTF-8").newDecoder()));
@@ -43,10 +43,10 @@ public class Cadastrar extends HttpServlet {
     public void registrarJogador(Jogador jogador)
         throws IOException {
             String path = getServletContext().getRealPath("/WEB-INF");    
-            File file = new File(path, "jogadores.txt");
+            File file = new File(path, "repositorio.txt");
             if(!file.exists())
                 file.createNewFile();
-            String fileJogador = getServletContext().getRealPath("/WEB-INF/jogadores.txt");    
+            String fileJogador = getServletContext().getRealPath("/WEB-INF/repositorio.txt");    
             OutputStreamWriter g = new OutputStreamWriter(
                                        new FileOutputStream(fileJogador,true),Charset.forName("UTF-8").newEncoder());
             BufferedWriter writer = new BufferedWriter(g);
