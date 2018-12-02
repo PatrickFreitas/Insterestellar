@@ -135,6 +135,23 @@ function gravidade() {
   }, 75)
 }
 
+function alertModal() {
+    $("musicaFundo").pause();
+    $("gameOver").play();
+    $("vozGameOver").play();
+    $('modal').classList.add('bounceIn');
+    $('container').style.display = 'block';
+    $('nave').style.display = 'none';
+    $('modal').style.display = 'flex';
+    setTimeout(function () {
+      $('modal').classList.add('bounceIn');
+    },1000)
+    setTimeout(function () {
+        $("gameOver").pause();
+        $("vozGameOver").pause();
+    },10000)
+}
+
 
 function detectarColisaoSuperior(obstaculo) {
   let box = obstaculo.getBoundingClientRect()
@@ -142,7 +159,7 @@ function detectarColisaoSuperior(obstaculo) {
 
   if (nave.top <= box.bottom) {
     if (nave.right >= box.left && nave.right <= box.right) {
-      alert('colidiu')
+      alertModal();
       continuar = false
       return true
     }
@@ -155,7 +172,7 @@ function detectarColisaoInferior(obstaculo) {
 
   if (nave.bottom >= box.top) {
     if (nave.right >= box.left && nave.right <= box.right) {
-      alert('colidiu')
+      alertModal();
       continuar = false
       return true
     }

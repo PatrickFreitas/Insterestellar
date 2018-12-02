@@ -10,6 +10,24 @@
 <body id="body">
 
 <div id="jogo">
+    <audio src="./sons/GameoverOne.wav" id="gameOver"></audio>
+    <audio src="./sons/Game%20Over%20sound%20effect.m4a" id="vozGameOver"></audio>
+    <audio src="./sons/interstellar-main-theme.mp3" id="musicaFundo" autoplay loop></audio>
+
+    <div class="container" id="container">
+        <div class="animated modal-jogo" id="modal">
+            <div class="conteudo-modal">
+                <div class="div-logo">
+                    <img src="imagens/INTERESTELLARLOGO-01.png" class="logo">
+                </div>
+                <p class="p-pontuacao">Pontos obtidos:</p>
+                <p class="p-pontuacao pontos" id="pontuacao-obtida">999</p>
+                <div class="div-btn">
+                    <input type="button" value="Jogar novamente" class="jogar-novamente">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="placar">
         <p class="p-placar" id="nome-jogador">Lukas Rodrigo</p>
         <p class="p-placar" id="pontuacao">999 Pontos</p>
@@ -18,6 +36,7 @@
         <img id="nave" src="./imagens/ship.png" class="nave">
     </div>
 </div>
+
     <script src="./js/helpers.js"></script>
     <script src="./js/index.js"></script>
 </body>
