@@ -10,6 +10,9 @@ const wHeight = window.innerHeight
 let areaVoo = $('jogo')
 let interagiu = false
 let continuar = true
+
+let pontuacao = parseInt($('pontuacao').innerHTML)
+
 posicionarNave()
 gravidade()
 
@@ -18,7 +21,7 @@ setInterval(function () {
   if (continuar) {
     createBox()
   }
-}, 1000)
+}, 1500)
 
 // enquanto estiver testando
 // setTimeout(function(){
@@ -45,13 +48,19 @@ document.body.onkeyup = function (e) {
 * ------------- DEFINIÇÕES DE FUNÇÕES -------------
 */
 
+function somarPonto(){
+  pontuacao++
+  $('pontuacao').innerHTML = pontuacao
+}
+
+
 function subir() {
   if (!interagiu) {
     interagiu = true
   }
 
   if (parseFloat(nave.style.top) >= 15 && continuar) {
-    naveTop -= 50
+    naveTop -= 400
     movimentarNave()
   }
 }
@@ -66,22 +75,35 @@ function descer() {
   movimentarNave()
 }
 
+
 function createBox() {
   let box = document.createElement('div')
   box.classList.add('superior')
   box.classList.add('box')
+  
+  let h = areaVoo.clientHeight
+  let espacoMeio = 200
+
+  let altura = Math.floor(Math.random() * 150) + 300
+
+  let alturaAnotherBox = h - espacoMeio - altura
+  let topAnotherBox = altura + espacoMeio
+
+  box.style.height = altura + 'px'
+
+  box.somado = false
   let w = areaVoo.clientWidth
   box.style.left = w + 'px'
   areaVoo.appendChild(box)
   goToLeft(box)
 
-  let h = areaVoo.clientHeight
-
   let anotherBox = document.createElement('div')
   anotherBox.classList.add('inferior')
   anotherBox.classList.add('box')
+  box.somado = false
 
-  anotherBox.style.top = (h - 50) + 'px'
+  anotherBox.style.top = topAnotherBox  + 'px'
+  anotherBox.style.height = alturaAnotherBox  + 'px'
 
   anotherBox.style.left = w + 'px'
   areaVoo.appendChild(anotherBox)
@@ -105,7 +127,7 @@ function goToLeft(box) {
   }, 20)
 
   if (left >= 10) {
-    box.style.left = (left -= 3) + 'px'
+    box.style.left = (left -= 7) + 'px'
 
     if (box.classList[0] == 'superior') {
       if (detectarColisaoSuperior(box)) {
@@ -127,12 +149,27 @@ function goToLeft(box) {
 function gravidade() {
   if (interagiu && continuar) {
     // console.log(naveTop)
-    naveTop += 5
+    naveTop += 8
     movimentarNave()
   }
-  setTimeout(function () {
-    gravidade()
-  }, 75)
+  window.requestAnimationFrame(gravidade)
+}
+
+function alertModal() {
+    $("musicaFundo").pause();
+    $("gameOver").play();
+    $("vozGameOver").play();
+    $('modal').classList.add('bounceIn');
+    $('container').style.display = 'block';
+    $('nave').style.display = 'none';
+    $('modal').style.display = 'flex';
+    setTimeout(function () {
+      $('modal').classList.add('bounceIn');
+    },1000)
+    setTimeout(function () {
+        $("gameOver").pause();
+        $("vozGameOver").pause();
+    },10000)
 }
 
 
@@ -142,10 +179,15 @@ function detectarColisaoSuperior(obstaculo) {
 
   if (nave.top <= box.bottom) {
     if (nave.right >= box.left && nave.right <= box.right) {
-      alert('colidiu')
+      alertModal();
       continuar = false
       return true
-    }
+    } 
+  } 
+
+  if(nave.left > box.right && !obstaculo.somado){
+    obstaculo.somado = true
+    somarPonto()
   }
 }
 
@@ -155,7 +197,7 @@ function detectarColisaoInferior(obstaculo) {
 
   if (nave.bottom >= box.top) {
     if (nave.right >= box.left && nave.right <= box.right) {
-      alert('colidiu')
+      alertModal();
       continuar = false
       return true
     }
