@@ -20,7 +20,8 @@
 </head>
 <body>
 <%
-	String usuario = (String)request.getAttribute("usuario");
+	String usuario = (String)request.getSession().getAttribute("usuario");
+	String pontuacao = (String)request.getSession().getAttribute("pontuacao");
 %>
 <header class="v-header container">
     <div class="fullscreen">
@@ -33,7 +34,7 @@
 
         <div class="centralDiv ranking-list-item col-dg-6">
           <p class="paragrafo">
-            Bem vindo, <%= usuario %>  </br> </br> Sua pontuacao maxima atingida foi 999pts, selecione uma dificuldade para jogar novamente.  
+            Bem vindo, <%= usuario %>  </br> </br> Sua pontuacao maxima atingida foi de <%=pontuacao%> pontos, selecione uma dificuldade para jogar novamente.  
           <p>
         </div>
 
@@ -46,7 +47,12 @@
         </select>
         
         <div class="col-dg-6 col-dm-4 col-10">
-            <a href="jogo.html"><button type="button" class="btn-menu colorBtn2">Jogar</button></a>
+            <a href="jogo.jsp"><button type="button" class="btn-menu colorBtn2">Jogar</button></a>
+        </div>
+        <div class="col-dg-6 col-dm-4 col-10">
+			<form id="formRanking" action="Ranking" method="POST">
+            	<button type="submit" class="btn-menu colorBtn2">Ranking</button>
+            </form>
         </div>
     </div>
 </header>

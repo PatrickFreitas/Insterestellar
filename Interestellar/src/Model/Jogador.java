@@ -4,7 +4,8 @@ public class Jogador {
     private int id;
     private String usuario;
     private String senha;
-    private String email;    
+    private String email; 
+    private String pontuacao;
 
     public Jogador()
     { }
@@ -25,6 +26,10 @@ public class Jogador {
         return email;
     }
     
+    public String getPontuacao() {
+        return pontuacao;
+    }
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -39,5 +44,9 @@ public class Jogador {
     
     public void setEmail(String email) {
         this.email = email;
-    }        
+    }  
+    
+    public void setPontuacao(String pontuacao) {
+        this.pontuacao = pontuacao;
+    }     
 }

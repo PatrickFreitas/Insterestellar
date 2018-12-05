@@ -1,34 +1,34 @@
 @-webkit-keyframes animaFooter {
-    0% {background-position: 0px 0px;}
+    0% {background-position: 0 0;}
     100% {background-position: -848px 0}
 }
 @-moz-keyframes animaFooter {
-    0% {background-position: 0px 0px;}
+    0% {background-position: 0 0;}
     100% {background-position: -848px 0}
 }
 @-o-keyframes animaFooter {
-    0% {background-position: 0px 0px;}
+    0% {background-position: 0 0;}
     100% {background-position: -848px 0}
 }
 @-keyframes animaFooter {
-    0% {background-position: 0px 0px;}
+    0% {background-position: 0 0;}
     100% {background-position: -848px 0}
 }
 
 @-webkit-keyframes animaBg {
-    0% {background-position: 0px 100%;}
+    0% {background-position: 0 100%;}
     100% {background-position: -2000px 100%}
 }
 @-moz-keyframes animaBg {
-    0% {background-position: 0px 100%;}
+    0% {background-position: 0 100%;}
     100% {background-position: -2000px 100%}
 }
 @-o-keyframes animaBg {
-    0% {background-position: 0px 100%;}
+    0% {background-position: 0 100%;}
     100% {background-position: -2000px 100%}
 }
 @-keyframes animaBg {
-    0% {background-position: 0px 100%;}
+    0% {background-position: 0 100%;}
     100% {background-position: -275px 100%}
 }
 
@@ -49,20 +49,20 @@
     100% {left: -100px}
 }
 @-webkit-keyframes animaObt {
-    0% {background-position: 0px 0px}
-    100% {background-position: -180px 0px}
+    0% {background-position: 0 0}
+    100% {background-position: -180px 0}
 }
 @-moz-keyframes animaObt {
-    0% {background-position: 0px 0px}
-    100% {background-position: -180px 0px}
+    0% {background-position: 0 0}
+    100% {background-position: -180px 0}
 }
 @-o-keyframes animaObt {
-    0% {background-position: 0px 0px}
-    100% {background-position: -180px 0px}
+    0% {background-position: 0 0}
+    100% {background-position: -180px 0}
 }
 @-keyframes animaObt {
-    0% {background-position: 0px 0px}
-    100% {background-position: -180px 0px}
+    0% {background-position: 0 0}
+    100% {background-position: -180px 0}
 }
 
 @font-face{
@@ -85,30 +85,12 @@ html, body{
 }
 
 #jogo{
-    margin: auto;
-    position: relative;
-    max-width: 767px;
-    height: 100%;
-    min-height: 525px;
-}
-
-#tela-jogo{
-    position: absolute;
+    min-width: 100%;
     width: 100%;
+    min-height: 100%;
     height: 100%;
-}
-#background-jogo{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 80%;
     background-image: url("../img/bg.jpg");
-    background-position: 0px 100%;
-    background-repeat: repeat; /* talvez de erro */
-    background-color: black;
-
-
-
+    background-size: cover;
     -webkit-animation: animaBg 13s linear infinite;
     animation: animaBg 13s linear infinite;
 }
@@ -120,194 +102,56 @@ html, body{
     width: 100%;
 
 }
-
-#obstaculos{
-    position: absolute;
-    top: -50px;
-    height: 50px;
-    width: 100%;
-    box-shadow: inset 0 0 20px rgba(193, 94, 255, 1), 0 0 20px rgba(193, 94, 255, .4);
-
-    background-image: url("../img/topo.png");
-    background-position: center center;
-    background-repeat: repeat;
-
-    -webkit-animation: animaObt 2s linear infinite;
-    animation: animaObt 2s linear infinite;
-}
-
-#footer-jogo{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
-    background-image: url("../img/footer.jpg");
-    -webkit-box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
-    -moz-box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
-    box-shadow: -2px -3px 32px 2px rgba(193, 94, 255, 1);
-
-
-    background-position: 0px 100%;
-    background-repeat: repeat;
-
-
-    -webkit-animation: animaFooter 4s linear infinite;
-    animation: animaFooter 4s linear infinite;
-
-}
-
-#placar{
-    padding-top: 30px;
-    position: absolute;
-    color: #F3CF42;
-    text-shadow: 5px 5px 5px black;
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    z-index: 100;
-    font-size: 50px;
-}
-
-#antes-jogo{
-    position: absolute;
-    opacity: 0;
-    top: 75px;
-    left: 65px;
-    width: 188px;
-    height: 170px;
-    background-color: #4ec0ca;
-
-}
-
-
-#placar-final{
-    position: absolute;
+.container{
     display: none;
-    opacity: 0;
-    top: 64px;
-    left: 43px;
-    width: 236px;
-    height: 280px;
-    background-color: black;
-    z-index: 1000;
-}
-
-#medalha{
     position: absolute;
-    opacity: 0;
-    top: 114px;
-    width: 44px;
-    height: 44px;
+    z-index: 999;
+    background-color: rgba(17,17,17,.7);
+    width: 100vw;
+    height: 100vh;
 }
-
-#pontuacao{
-    position: absolute;
-    top: 105px;
-    left: 107px;
-    width: 184px;
-    height: 14px;
-    text-align: right;
+.div-logo{
+    display: flex;
+    align-items: center;
 }
-
-#maior-pontuacao{
-    position: absolute;
-    top: 147px;
-    left: 107px;
-    width: 104px;
-    height: 14px;
-    text-align: right;
+.logo{
+    width: 300px;
+    margin: auto;
+    padding: 5px;
 }
-/*
-#jogar-novamente{
+.modal-jogo{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
     position: absolute;
-    top: 205px;
-    left: 65px;
-    width: 70px;
-    height: 115px;
-    text-align: right;
+    top: 30vh;
+    left: 38vw;
+    width: 25%;
+    height: 50%;
+    box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2dc7ff 0px 0px 20px, #2dc7ff 0px 0px 30px, #2dc7ff 0px 0px 40px, #2dc7ff 0px 0px 50px, #2dc7ff 0px 0px 75px;
+    padding-top: 50px;
+}
+.close{
+    font-size: 50px;
+    color: tomato;
+    transition: all 0.3s;
+    position: absolute;
+    top: -40px;
+    right: 20px;
     cursor: pointer;
 }
-#jogar-novamente button{
-    width: 100px;
-    height: 50px;
-    background-color: red;
+.close:hover{
+    transform: scale(0.9);
 }
-*/
-
-.boundingbox{
-    position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-}
-
-
-#jogador{
-    left: 60px;
-    top: 200px;
-}
-
 .nave{
-    left: 60px;
-    top: 200px;
     position: absolute;
+    left: 60px;
+    top: 50vh;
     width: 50px;
     z-index: 100;
     background-image: url("../img/ship.png");
-
     transition: 0.25s;
-}
-
-.pipe{
-    position: absolute;
-    left: -100px;
-    width: 52px;
-
-    z-index: 10;
-
-
-    -webkit-animation: animaPipe 754ms infinite;
-    animation: animaPipe 754ms infinite;
-}
-
-.pipe-topo{
-    position: absolute;
-    top: 0;
-    width: 52px;
-    background-color: tomato;
-    background-repeat: repeat-y;
-    background-position: center;
-
-}
-
-.pipe-topo:after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 52px;
-    height: 26px;
-    background-color: #cccccc;
-}
-
-
-.pipe-bottom{
-    position: absolute;
-    bottom: 0;
-    width: 52px;
-    background-color: tomato;
-    background-repeat: repeat-y;
-    background-position: center;
-}
-.pipe-bottom:after{
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 52px;
-    height: 26px;
-    background-color: #cccccc;
-
 }
 
 .box {
@@ -318,7 +162,81 @@ html, body{
     background-color: red;
 }
 
-body {
-	background: gray;
-	background-repeat: no-repeat;
+.p-placar{
+    font-size: 60px;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2dc7ff 0px 0px 20px, #2dc7ff 0px 0px 30px, #2dc7ff 0px 0px 40px, #2dc7ff 0px 0px 50px, #2dc7ff 0px 0px 75px;
+    color: #F3CF42;
+}
+.conteudo-modal{
+    margin: 30px auto;
+}
+.p-pontuacao{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+.pontos{
+    margin: 10px;
+    font-size: 40px;
+    color: #F3CF42;
+}
+.div-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+}
+.jogar-novamente{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0);
+    border: none;
+    border: 2px solid #2dc7ff;
+    color: white;
+    margin: auto;
+    cursor: pointer;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: commando;
+    transition: all 0.3s;
+}
+.jogar-novamente:hover{
+    transform: scale(0.9);
+    background-color: #2dc7ff;
+    color: white;
+}
+.placar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    min-width: 100%;
+    width: 100%;
+    min-height: 18%;
+    height: 18%;
+}
+
+@media screen and (max-width: 500px){
+    .div-btn{
+        margin: 10px auto 50px auto;
+    }
+    .jogar-novamente{
+        width: 200px;
+    }
+    .logo{
+        width: 200px;
+    }
+    .p-pontuacao{
+        font-size: 25px;
+    }
+    .p-placar{
+        font-size: 25px;
+        text-shadow: #FFF 0px 0px 1px, #FFF 0px 0px 2px, #FFF 0px 0px 4px, #2dc7ff 0px 0px 8px, #2dc7ff 0px 0px 12px, #2dc7ff 0px 0px 10px, #2dc7ff 0px 0px 10px, #2dc7ff 0px 0px 24px;
+    }
+    .modal-jogo{
+        top: 30vh;
+        left: 18vw;
+        width: 250px;
+        height: 250px;
+    }
 }

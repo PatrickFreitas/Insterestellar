@@ -41,6 +41,10 @@
 	</style>
 </head>
 <body>
+	<%
+		String jsonJogadores = (String)request.getAttribute("jsonJogadores");
+	%>
+	
 	<div class="fullscreen">
 		<video src="backgrounds/bg2Video.mp4" autoplay="true" muted="true" loop="true"></video>
 		<img src="backgrounds/bg.jpg">
@@ -51,14 +55,18 @@
 		<h1 class="titulo">Melhores Jogadores</h1>
 		<div>
 			<ul>
-				<li class="ranking-list-item">Luiz <span class="spanPts">3555 pts</span></li>
-				<li class="ranking-list-item">Lukas <span class="spanPts">1321 pts</span></li>
-				<li class="ranking-list-item">Rhuan <span class="spanPts">1254 pts</span></li>
-				<li class="ranking-list-item">Thiago <span class="spanPts">1100 pts</span></li>
-				<li class="ranking-list-item">Cleber <span class="spanPts">840 pts</span></li>
+				<%
+					String[] vetJogadores = jsonJogadores.split("-");
+					if(vetJogadores.length == 0)
+						 out.print("<li class='ranking-list-item' style='text-align: center'> Não há pontuações cadastradas para exibição de ranking. </li>");
+						
+	                for(int i = 0; i < vetJogadores.length; i++){                         
+	                    out.print("<li class='ranking-list-item'>" + vetJogadores[i].split(";")[0] + "<span class='spanPts'>" + vetJogadores[i].split(";")[1] + " pts</span></li>");
+	                }
+                %>
 			</ul>
-            <a href="index.jsp">
-             	<button class="btn btn-full">Voltar</button>
+            <a href="pos-login.jsp">
+             	<button class="btn btn-full" style="width: 90% !important">Voltar</button>
             </a>
 		</div>
 	</div>

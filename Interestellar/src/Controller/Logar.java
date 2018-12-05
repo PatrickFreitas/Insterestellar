@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;  
 
 @WebServlet(name = "Logar", urlPatterns = {"/Logar"})
 public class Logar extends HttpServlet {
@@ -37,6 +38,7 @@ public class Logar extends HttpServlet {
                 j.setUsuario(vetCliente[1]);
                 j.setSenha(vetCliente[2]);
                 j.setEmail(vetCliente[3]);
+                j.setPontuacao(vetCliente[4]);
                 result.add(j);
               }
            }
@@ -80,8 +82,8 @@ public class Logar extends HttpServlet {
         
         if(jogadores.size() <= 0) {
         	mensagem = "Não há nenhum registro com essas informações.";
-	       request.setAttribute("mensagem", mensagem);
-	       request.getRequestDispatcher("login.jsp").forward(request, response);        
+        	request.setAttribute("mensagem", mensagem);
+        	request.getRequestDispatcher("login.jsp").forward(request, response);        
         }
         else {
         	for (int i = 0; i < jogadores.size(); i++) {
@@ -89,7 +91,10 @@ public class Logar extends HttpServlet {
     			if(j.getUsuario().equals(usuario) && j.getSenha().equals(senha)) { 
     				mensagem = "Usuário localizado, parabéns pelo Login!"; 
     				destino = "pos-login.jsp";
-    	            request.setAttribute("usuario", usuario);
+    				
+    	            HttpSession session = request.getSession();  
+    	            session.setAttribute("usuario", j.getUsuario());
+    	            session.setAttribute("pontuacao", j.getPontuacao());
     				break;
     			}
     			if(i == jogadores.size() - 1) {

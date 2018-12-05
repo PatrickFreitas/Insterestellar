@@ -214,9 +214,12 @@ html, body{
     width: 100%;
     min-height: 18%;
     height: 18%;
+<<<<<<< HEAD
     background-color: rgba(17,17,17, 0.5);
     position: absolute;
     z-index: 99;
+=======
+>>>>>>> cc335a98b3356b020e35904abb2b88f81d6713e4
 }
 
 @media screen and (max-width: 500px){
