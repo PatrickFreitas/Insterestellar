@@ -53,6 +53,12 @@ function somarPonto(){
   $('pontuacao').innerHTML = pontuacao
 }
 
+setTimeout(function(){
+  if(!interagiu) {
+    subir();
+    interagiu = true;
+  }
+}, 2500);
 
 function subir() {
   if (!interagiu) {
@@ -60,8 +66,10 @@ function subir() {
   }
 
   if (parseFloat(nave.style.top) >= 15 && continuar) {
-    naveTop -= 400
-    movimentarNave()
+    naveTop -= 350
+    window.requestAnimationFrame(function(){
+      movimentarNave()
+    })
   }
 }
 
@@ -72,7 +80,9 @@ function movimentarNave() {
 
 function descer() {
   naveTop += 15
-  movimentarNave()
+  winodow.requestAnimationFrame(function(){
+    movimentarNave()
+  })
 }
 
 
@@ -84,7 +94,7 @@ function createBox() {
   let h = areaVoo.clientHeight
   let espacoMeio = 200
 
-  let altura = Math.floor(Math.random() * 150) + 300
+  let altura = Math.floor(Math.random() * (wHeight * 0.3)) + (wHeight * 0.2);
 
   let alturaAnotherBox = h - espacoMeio - altura
   let topAnotherBox = altura + espacoMeio
@@ -127,7 +137,7 @@ function goToLeft(box) {
   }, 20)
 
   if (left >= 10) {
-    box.style.left = (left -= 7) + 'px'
+    box.style.left = (left -= 10) + 'px';
 
     if (box.classList[0] == 'superior') {
       if (detectarColisaoSuperior(box)) {
