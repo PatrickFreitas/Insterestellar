@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Interestellar Game</title>
     <meta name="viewport" content="width=device-width, user-scalable=0">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -12,8 +12,7 @@
 <div id="jogo">
     <audio src="./sons/GameoverOne.wav" id="gameOver"></audio>
     <audio src="./sons/Game%20Over%20sound%20effect.m4a" id="vozGameOver"></audio>
-    <audio src="./sons/interstellar-main-theme.mp3" id="musicaFundo" autoplay loop></audio>
-
+    <iframe src="./sons/interstellar-main-theme.mp3" allow="autoplay" loop="loop" style="display:none" id="musicaFundo"></iframe>
     <div class="container" id="container">
         <div class="animated modal-jogo" id="modal">
             <div class="conteudo-modal">
@@ -21,9 +20,10 @@
                     <img src="imagens/INTERESTELLARLOGO-01.png" class="logo">
                 </div>
                 <p class="p-pontuacao">Pontos obtidos:</p>
-                <p class="p-pontuacao pontos" id="pontuacao-obtida">999</p>
+                <p class="p-pontuacao pontos" id="pontuacao-obtida">0</p>
                 <div class="div-btn">
                     <input type="button" value="Jogar novamente" class="jogar-novamente">
+                    <input type="button" value="Sair" class="sair">
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <p class="p-placar"><span id="pontuacao">0</span> Pontos</p>
     </div>
     <div id="jogador">
-        <img id="nave" src="./imagens/ship.png" class="nave">
+        <img id="nave" src="./imagens/nave1.png" class="nave">
     </div>
 </div>
 

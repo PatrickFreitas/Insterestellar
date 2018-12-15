@@ -16,6 +16,7 @@ let pontuacao = parseInt($('pontuacao').innerHTML)
 posicionarNave()
 gravidade()
 
+
 // // para produção
 setInterval(function () {
   if (continuar) {
@@ -80,7 +81,7 @@ function movimentarNave() {
 
 function descer() {
   naveTop += 15
-  winodow.requestAnimationFrame(function(){
+  window.requestAnimationFrame(function(){
     movimentarNave()
   })
 }
@@ -123,6 +124,9 @@ function createBox() {
 }
 
 function posicionarNave() {
+  var tipoNave = Math.round(Math.random() * 6)+1;
+  console.log(tipoNave)
+  $('nave').src = "./imagens/nave"+tipoNave+".png";
   naveTop = wHeight / 2;
   movimentarNave()
 }
@@ -162,13 +166,14 @@ function gravidade() {
     naveTop += 8
     movimentarNave()
   }
-  window.requestAnimationFrame(gravidade)
+    window.requestAnimationFrame(function(){
+        gravidade()
+    })
 }
 
 function alertModal() {
-    $("musicaFundo").pause();
+    $('jogo').style.animationPlayState = "paused"
     $("gameOver").play();
-    $("vozGameOver").play();
     $('modal').classList.add('bounceIn');
     $('container').style.display = 'block';
     $('nave').style.display = 'none';
@@ -178,7 +183,6 @@ function alertModal() {
     },1000)
     setTimeout(function () {
         $("gameOver").pause();
-        $("vozGameOver").pause();
     },10000)
 }
 

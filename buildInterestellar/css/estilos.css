@@ -147,9 +147,8 @@ html, body{
     position: absolute;
     left: 150px;
     top: 50vh;
-    width: 50px;
+    width: 100px;
     z-index: 100;
-    background-image: url("../imagens/ship.png");
     transition: 0.25s;
 }
 
@@ -166,6 +165,7 @@ html, body{
     font-size: 60px;
     text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2dc7ff 0px 0px 20px, #2dc7ff 0px 0px 30px, #2dc7ff 0px 0px 40px, #2dc7ff 0px 0px 50px, #2dc7ff 0px 0px 75px;
     color: #F3CF42;
+    -webkit-text-stroke: 3px #707070;
 }
 .conteudo-modal{
     margin: 30px auto;
@@ -183,6 +183,7 @@ html, body{
 .div-btn{
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 50px auto;
 }
@@ -193,7 +194,21 @@ html, body{
     border: none;
     border: 2px solid #2dc7ff;
     color: white;
-    margin: auto;
+    margin: 5px auto;
+    cursor: pointer;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: commando;
+    transition: all 0.3s;
+}
+.sair{
+    width: 250px;
+    height: 40px;
+    background-color: rgba(255,255,255,0);
+    border: none;
+    border: 2px solid darkred;
+    color: white;
+    margin: 5px auto;
     cursor: pointer;
     padding-top: 5px;
     font-size: 20px;
@@ -204,6 +219,9 @@ html, body{
     transform: scale(0.9);
     background-color: #2dc7ff;
     color: white;
+}
+.sair:hover{
+    transform: scale(0.9);
 }
 .placar{
     display: flex;
@@ -226,7 +244,7 @@ html, body{
     .div-btn{
         margin: 10px auto 50px auto;
     }
-    .jogar-novamente{
+    .jogar-novamente, .sair{
         width: 200px;
     }
     .logo{
@@ -243,6 +261,6 @@ html, body{
         top: 30vh;
         left: 18vw;
         width: 250px;
-        height: 250px;
+        height: 50%;
     }
 }

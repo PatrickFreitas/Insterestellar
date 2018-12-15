@@ -13,7 +13,32 @@ html, body {
     background-image: linear-gradient(0deg, transparent, black 75%);
     z-index: 1;
 }
-
+.div-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sair{
+    width: 350px;
+    height: 60px;
+    background-color: rgba(255,255,255,0);
+    border: none;
+    border: 2px solid #2dc7ff;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    margin: auto;
+    top: 45px;
+    z-index: 999;
+    padding-top: 5px;
+    font-size: 25px;
+    font-family: commando;
+    transition: all 0.3s;
+}
+.sair:hover{
+    transform: scale(0.9);
+}
 .star-wars {
     display: flex;
     justify-content: center;
