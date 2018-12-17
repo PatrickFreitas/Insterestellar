@@ -6,15 +6,23 @@
     <link rel="stylesheet" href="./css/easterEgg.css">
 </head>
 <script>
-    function playMusica() {
-        document.getElementById("musicaStarWars").play();
+    function playAudio() {
+        var testChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if(!testChrome){
+            $('#iframeAudio').remove()
+        }
+        else{
+            $('#playAudio').remove()
+        }
     }
 </script>
-<body onload="playMusica()">
+<body>
+    <div class="div-btn">
+        <input type="button" value="Voltar" class="sair">
+    </div>
     <div class="fade"></div>
-    <audio src="./sound/Star%20Wars%20Episode%20IV%20Opening%20Crawl.mp3" id="musicaStarWars"></audio>
+    <iframe src="./sound/Star%20Wars%20Episode%20IV%20Opening%20Crawl.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
     <section class="star-wars">
-
         <div class="crawl">
 
             <div class="title">

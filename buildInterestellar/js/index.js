@@ -16,6 +16,7 @@ let pontuacao = parseInt($('pontuacao').innerHTML)
 posicionarNave()
 gravidade()
 
+
 // // para produção
 setInterval(function () {
   if (continuar) {
@@ -53,6 +54,12 @@ function somarPonto(){
   $('pontuacao').innerHTML = pontuacao
 }
 
+setTimeout(function(){
+  if(!interagiu) {
+    subir();
+    interagiu = true;
+  }
+}, 2500);
 
 function subir() {
   if (!interagiu) {
@@ -60,8 +67,10 @@ function subir() {
   }
 
   if (parseFloat(nave.style.top) >= 15 && continuar) {
-    naveTop -= 400
-    movimentarNave()
+    naveTop -= 350
+    window.requestAnimationFrame(function(){
+      movimentarNave()
+    })
   }
 }
 
@@ -72,7 +81,9 @@ function movimentarNave() {
 
 function descer() {
   naveTop += 15
-  movimentarNave()
+  window.requestAnimationFrame(function(){
+    movimentarNave()
+  })
 }
 
 
@@ -84,7 +95,7 @@ function createBox() {
   let h = areaVoo.clientHeight
   let espacoMeio = 200
 
-  let altura = Math.floor(Math.random() * 150) + 300
+  let altura = Math.floor(Math.random() * (wHeight * 0.3)) + (wHeight * 0.2);
 
   let alturaAnotherBox = h - espacoMeio - altura
   let topAnotherBox = altura + espacoMeio
@@ -113,6 +124,9 @@ function createBox() {
 }
 
 function posicionarNave() {
+  var tipoNave = Math.round(Math.random() * 6)+1;
+  console.log(tipoNave)
+  $('nave').src = "./imagens/nave"+tipoNave+".png";
   naveTop = wHeight / 2;
   movimentarNave()
 }
@@ -127,7 +141,7 @@ function goToLeft(box) {
   }, 20)
 
   if (left >= 10) {
-    box.style.left = (left -= 7) + 'px'
+    box.style.left = (left -= 10) + 'px';
 
     if (box.classList[0] == 'superior') {
       if (detectarColisaoSuperior(box)) {
@@ -152,13 +166,14 @@ function gravidade() {
     naveTop += 8
     movimentarNave()
   }
-  window.requestAnimationFrame(gravidade)
+    window.requestAnimationFrame(function(){
+        gravidade()
+    })
 }
 
 function alertModal() {
-    $("musicaFundo").pause();
+    $('jogo').style.animationPlayState = "paused"
     $("gameOver").play();
-    $("vozGameOver").play();
     $('modal').classList.add('bounceIn');
     $('container').style.display = 'block';
     $('nave').style.display = 'none';
@@ -168,7 +183,6 @@ function alertModal() {
     },1000)
     setTimeout(function () {
         $("gameOver").pause();
-        $("vozGameOver").pause();
     },10000)
 }
 
