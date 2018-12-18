@@ -13,16 +13,26 @@ let continuar = true
 
 let pontuacao = parseInt($('pontuacao').innerHTML)
 
+let modificadorVelocidade = 1;
+let modificadorEspaco = 1;
+let dificuldade = localStorage.getItem('dificuldade');
+if(dificuldade === 'medio') {
+  modificadorVelocidade = 0.65;
+}
+if(dificuldade === 'dificil') {
+  modificadorVelocidade = 0.85;
+  modificadorEspaco = 0.85;
+}
+
 posicionarNave()
 gravidade()
-
 
 // // para produção
 setInterval(function () {
   if (continuar) {
     createBox()
   }
-}, 1200)
+}, (1200 * modificadorVelocidade));
 
 // enquanto estiver testando
 // setTimeout(function(){
@@ -94,7 +104,7 @@ function createBox() {
   box.classList.add('box')
   
   let h = areaVoo.clientHeight
-  let espacoMeio = 200
+  let espacoMeio = 200 * modificadorEspaco
 
   let altura = Math.floor(Math.random() * (wHeight * 0.3)) + (wHeight * 0.2);
 
@@ -126,7 +136,6 @@ function createBox() {
 
 function posicionarNave() {
   var tipoNave = Math.round(Math.random() * 6)+1;
-  console.log(tipoNave)
   $('nave').src = "./imagens/nave"+tipoNave+".png";
   naveTop = wHeight / 2;
   movimentarNave()
