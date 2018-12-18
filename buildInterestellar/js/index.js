@@ -22,7 +22,7 @@ setInterval(function () {
   if (continuar) {
     createBox()
   }
-}, 1500)
+}, 1200)
 
 // enquanto estiver testando
 // setTimeout(function(){
@@ -67,7 +67,8 @@ function subir() {
   }
 
   if (parseFloat(nave.style.top) >= 15 && continuar) {
-    naveTop -= 350
+      $("propulsao").play();
+      naveTop -= 350
     window.requestAnimationFrame(function(){
       movimentarNave()
     })

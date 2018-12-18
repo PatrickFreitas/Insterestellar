@@ -40,16 +40,16 @@
 
 
         <h1 class="titulo">Selecione a dificuldade</h1>
-        <select class="col-dg-6 col-dm-4 col-10 select-group">
+        <select class="col-dg-6 col-dm-10 col-10 select-group">
           <option class="select-option" value="facil">Facil</option>
           <option class="select-option">Medio</option>
           <option class="select-option">Dificil</option>
         </select>
         
-        <div class="col-dg-6 col-dm-4 col-10">
+        <div class="col-dg-6 col-dm-10 col-10">
             <a href="jogo.jsp"><button type="button" class="btn-menu colorBtn2">Jogar</button></a>
         </div>
-        <div class="col-dg-6 col-dm-4 col-10">
+        <div class="col-dg-6 col-dm-10 col-10">
 			<form id="formRanking" action="Ranking" method="POST">
             	<button type="submit" class="btn-menu colorBtn2">Ranking</button>
             </form>

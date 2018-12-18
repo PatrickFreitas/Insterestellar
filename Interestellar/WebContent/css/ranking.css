@@ -17,7 +17,7 @@
 	height: 100vh;
 }
 .logo{
-	width: 380px;
+	width: 80%;
 }
 ul{
 	list-style: none;	
@@ -44,6 +44,8 @@ ul{
 	text-shadow: 5px 5px 5px black;
 	padding: 5px;
 	font-size: 35px;
+	margin: auto;
+	text-align: center;
 }
 .spanPts{
 	text-align: right;
@@ -77,6 +79,8 @@ ul{
 	.titulo{
 		font-size: 85px;
 		margin-bottom: 40px;
+		text-align: center;
+
 	}
 
 	.input-login {
@@ -95,6 +99,7 @@ ul{
 	.titulo{
 		font-size: 105px;
 		margin-bottom: 30px;
+		text-align: center;
 	}
 
 	.input-login {
@@ -119,6 +124,7 @@ ul{
 	.titulo{
 		font-size: 45px;
 		margin-bottom: 25px;
+		text-align: center;
 	}
 
 	.input-login {
