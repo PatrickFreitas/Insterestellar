@@ -61,7 +61,7 @@ document.body.onkeyup = function (e) {
 
 function somarPonto(){
   pontuacao++
-  $('pontuacao').innerHTML = pontuacao
+  $('pontuacao').innerHTML = pontuacao + ' pontos'
 }
 
 setTimeout(function(){
@@ -136,7 +136,7 @@ function createBox() {
 
 function posicionarNave() {
   var tipoNave = Math.round(Math.random() * 6)+1;
-  $('nave').src = "./imagens/nave"+tipoNave+".png";
+  $('nave').src = "./img/nave"+tipoNave+".png";
   naveTop = wHeight / 2;
   movimentarNave()
 }
@@ -188,12 +188,22 @@ function alertModal() {
     $('container').style.display = 'block';
     $('nave').style.display = 'none';
     $('modal').style.display = 'flex';
+    $('pontuacao-obtida').innerHTML = $('pontuacao').innerHTML.split(' ')[0]
+    $('novaPontuacao').value = $('pontuacao').innerHTML.split(' ')[0]
     setTimeout(function () {
       $('modal').classList.add('bounceIn');
     },1000)
     setTimeout(function () {
         $("gameOver").pause();
     },10000)
+
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+    };
+
+    xmlhttp.open("POST", "RegistrarPontuacao" +"?novaPontuacao="+ $('novaPontuacao').value, false);
+    xmlhttp.send();
 }
 
 
